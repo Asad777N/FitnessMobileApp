@@ -1,0 +1,164 @@
+.home-header {
+  --background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
+  --border-color: transparent;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+
+  ion-title {
+    font-weight: 700;
+    font-size: 24px;
+    color: #00ff88;
+  }
+}
+
+.home-content {
+  --background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
+  --padding-top: 0;
+}
+
+.header-banner {
+  background: linear-gradient(135deg, rgba(0, 255, 136, 0.1) 0%, rgba(255, 150, 0, 0.1) 100%);
+  border-bottom: 1px solid rgba(0, 255, 136, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+
+  .greeting {
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+      margin: 0 0 4px 0;
+    }
+
+    p {
+      color: rgba(255, 255, 255, 0.6);
+      margin: 0;
+    }
+  }
+}
+
+.stats-section {
+  padding: 0 16px 20px;
+
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 16px;
+  }
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+
+  .stat-card {
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.05) 0%, rgba(255, 150, 0, 0.05) 100%);
+    border: 1px solid rgba(0, 255, 136, 0.1);
+    border-radius: 16px;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.streak-card {
+  margin: 0 16px 20px;
+  background: linear-gradient(135deg, rgba(255, 150, 0, 0.1) 0%, rgba(0, 255, 136, 0.1) 100%);
+  border: 1px solid rgba(255, 150, 0, 0.2);
+
+  .streak-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    .streak-icon {
+      font-size: 32px;
+    }
+
+    .streak-info {
+      flex: 1;
+
+      h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: #fff;
+        margin: 0;
+      }
+
+      p {
+        color: rgba(255, 255, 255, 0.6);
+        margin: 4px 0 0 0;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.btn-quick-start {
+  --background: linear-gradient(135deg, #00ff88 0%, #00cc6f 100%);
+  --color: #000;
+  margin: 0 16px 20px;
+  height: 48px;
+  font-weight: 600;
+  border-radius: 12px;
+}
+
+.workouts-section {
+  padding: 0 16px 20px;
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+
+    h2 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+      margin: 0;
+    }
+
+    a {
+      color: #00ff88;
+      font-size: 12px;
+      text-decoration: none;
+    }
+  }
+}
+
+.workout-card {
+  background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 255, 136, 0.1);
+
+  .workout-meta {
+    display: flex;
+    gap: 16px;
+    margin-top: 12px;
+
+    span {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 12px;
+
+      ion-icon {
+        color: #00ff88;
+      }
+    }
+  }
+}
+
+.quick-action-card {
+  margin: 0 16px 20px;
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+}

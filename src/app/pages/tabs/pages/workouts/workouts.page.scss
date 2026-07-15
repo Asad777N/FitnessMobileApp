@@ -1,0 +1,138 @@
+.workouts-header {
+  --background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
+  --border-color: transparent;
+
+  ion-title {
+    font-weight: 700;
+    font-size: 24px;
+    color: #00ff88;
+  }
+}
+
+.workouts-content {
+  --background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
+}
+
+.category-filter {
+  padding: 16px;
+  border-bottom: 1px solid rgba(0, 255, 136, 0.1);
+
+  h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+}
+
+.category-segment {
+  --background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 4px;
+}
+
+ion-segment-button {
+  --color: rgba(255, 255, 255, 0.6);
+  --color-checked: #000;
+  --background-checked: #00ff88;
+  --border-radius: 10px;
+}
+
+.workouts-list {
+  padding: 16px;
+}
+
+.workout-card {
+  background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 255, 136, 0.1);
+  margin-bottom: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+
+  ion-card-header {
+    padding: 16px;
+    border-bottom: 1px solid rgba(0, 255, 136, 0.1);
+  }
+
+  .card-header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .difficulty-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    &.beginner {
+      background: rgba(45, 211, 111, 0.2);
+      color: #2dd36f;
+    }
+
+    &.intermediate {
+      background: rgba(255, 196, 9, 0.2);
+      color: #ffc409;
+    }
+
+    &.advanced {
+      background: rgba(235, 68, 90, 0.2);
+      color: #eb445a;
+    }
+  }
+}
+
+ion-card-title {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+ion-card-subtitle {
+  color: rgba(0, 255, 136, 0.8);
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+ion-card-content {
+  padding: 16px;
+  color: rgba(255, 255, 255, 0.8);
+
+  p {
+    font-size: 14px;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+}
+
+.workout-details {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 12px;
+
+  .detail {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+
+    ion-icon {
+      color: #00ff88;
+    }
+  }
+}
+
+.start-btn {
+  --background: linear-gradient(135deg, #00ff88 0%, #00cc6f 100%);
+  --color: #000;
+  --border-radius: 0 0 16px 16px;
+  height: 48px;
+  font-weight: 600;
+}

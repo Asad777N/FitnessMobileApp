@@ -1,0 +1,92 @@
+.auth-header {
+  --background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
+  --border-color: transparent;
+
+  ion-title {
+    font-weight: 700;
+    font-size: 20px;
+    color: #00ff88;
+  }
+}
+
+.auth-content {
+  --background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-container {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.brand {
+  text-align: center;
+  margin-top: 20px;
+
+  h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 8px 0;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+    font-size: 14px;
+  }
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .custom-input {
+    --padding-start: 12px;
+    --padding-end: 12px;
+    --padding-top: 12px;
+    --padding-bottom: 12px;
+    --background: rgba(255, 255, 255, 0.05);
+    --border-color: rgba(0, 255, 136, 0.2);
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    border-radius: 12px;
+    margin-bottom: 0;
+  }
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #00ff88 0%, #00cc6f 100%);
+  color: #000;
+  font-weight: 600;
+  height: 48px;
+  border-radius: 12px;
+  --box-shadow: 0 4px 16px rgba(0, 255, 136, 0.3);
+  margin-top: 16px;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 16px;
+
+  p {
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    font-size: 14px;
+
+    a {
+      color: #00ff88;
+      font-weight: 600;
+      cursor: pointer;
+
+      &:active {
+        opacity: 0.8;
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+<ion-header [translucent]="true" class="workouts-header">
+  <ion-toolbar>
+    <ion-title>Workouts</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="workouts-content">
+  <!-- Category Filter -->
+  <div class="category-filter">
+    <h3>Select Category</h3>
+    <ion-segment [value]="selectedCategory()" (ionChange)="selectCategory($event.detail.value)" class="category-segment">
+      <ion-segment-button value="" layout="icon-top">
+        <span>All</span>
+      </ion-segment-button>
+      <ion-segment-button *ngFor="let cat of categories" [value]="cat" layout="icon-top">
+        <span>{{ cat }}</span>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <!-- Workouts List -->
+  <div class="workouts-list">
+    <ion-card *ngFor="let workout of (workouts$ | async)" class="workout-card">
+      <ion-card-header>
+        <div class="card-header-top">
+          <div>
+            <ion-card-title>{{ workout.name }}</ion-card-title>
+            <ion-card-subtitle>{{ workout.category }} • {{ workout.difficulty }}</ion-card-subtitle>
+          </div>
+          <span class="difficulty-badge" [ngClass]="workout.difficulty">{{ workout.difficulty }}</span>
+        </div>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{ workout.description }}</p>
+        <div class="workout-details">
+          <div class="detail">
+            <ion-icon name="time"></ion-icon>
+            <span>{{ workout.duration }}m</span>
+          </div>
+          <div class="detail">
+            <ion-icon name="flame"></ion-icon>
+            <span>{{ workout.caloriesBurned }}cal</span>
+          </div>
+          <div class="detail">
+            <ion-icon name="barbell"></ion-icon>
+            <span>{{ workout.exercises.length }} exercises</span>
+          </div>
+        </div>
+      </ion-card-content>
+      <ion-button expand="block" color="primary" (click)="startWorkout(workout.id)" class="start-btn">
+        <ion-icon name="play" slot="start"></ion-icon>
+        Start Workout
+      </ion-button>
+    </ion-card>
+  </div>
+</ion-content>

@@ -1,0 +1,94 @@
+<ion-header [translucent]="true" class="home-header">
+  <ion-toolbar>
+    <ion-title>FitLife</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logoutUser()">
+        <ion-icon name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="home-content">
+  <div class="header-banner">
+    <div class="greeting">
+      <h1>Hey {{ user()?.displayName }}! 👋</h1>
+      <p>Let's crush your fitness goals today</p>
+    </div>
+  </div>
+
+  <!-- Daily Stats -->
+  <div class="stats-section">
+    <h2>Today's Progress</h2>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <app-progress-ring [progress]="todayComplete()" label="Daily" [value]="todayComplete() + '%'" color="#00ff88"></app-progress-ring>
+      </div>
+      <div class="stat-card">
+        <app-progress-ring [progress]="65" label="Calories" value="380/600" color="#ff9600"></app-progress-ring>
+      </div>
+      <div class="stat-card">
+        <app-progress-ring [progress]="50" label="Steps" value="7.2k/15k" color="#5260ff"></app-progress-ring>
+      </div>
+      <div class="stat-card">
+        <app-progress-ring [progress]="72" label="Water" value="1.8L/2.5L" color="#00d4ff"></app-progress-ring>
+      </div>
+    </div>
+  </div>
+
+  <!-- Streak -->
+  <ion-card class="streak-card">
+    <ion-card-content>
+      <div class="streak-container">
+        <div class="streak-icon">🔥</div>
+        <div class="streak-info">
+          <h3>{{ streak() }} Day Streak</h3>
+          <p>Keep up the amazing work!</p>
+        </div>
+        <ion-icon name="chevron-forward"></ion-icon>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Quick Start Button -->
+  <ion-button expand="block" class="btn-quick-start" (click)="startQuickWorkout()">
+    <ion-icon name="play-circle" slot="start"></ion-icon>
+    Start Quick Workout
+  </ion-button>
+
+  <!-- Recent Workouts -->
+  <div class="workouts-section">
+    <div class="section-header">
+      <h2>Recommended Workouts</h2>
+      <a href="#">View All</a>
+    </div>
+    <ion-slides [options]="{ slidesPerView: 1.2, spaceBetween: 16 }">
+      <ion-slide *ngFor="let workout of (workouts$ | async)">
+        <ion-card class="workout-card">
+          <ion-card-header>
+            <ion-card-title>{{ workout.name }}</ion-card-title>
+            <ion-card-subtitle>{{ workout.difficulty }}</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <p>{{ workout.description }}</p>
+            <div class="workout-meta">
+              <span><ion-icon name="time"></ion-icon> {{ workout.duration }}m</span>
+              <span><ion-icon name="flame"></ion-icon> {{ workout.caloriesBurned }}cal</span>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <!-- Water Intake Quick Add -->
+  <ion-card class="quick-action-card">
+    <ion-card-content>
+      <h3>Water Intake: {{ waterIntake() }}ml</h3>
+      <ion-button expand="block" (click)="addWater()" color="primary">
+        <ion-icon name="add-circle" slot="start"></ion-icon>
+        Add 250ml
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
