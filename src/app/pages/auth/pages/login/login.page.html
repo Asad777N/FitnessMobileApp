@@ -1,0 +1,51 @@
+<ion-header [translucent]="true" class="auth-header">
+  <ion-toolbar>
+    <ion-title>FitLife</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="auth-content">
+  <div class="auth-container">
+    <div class="brand">
+      <h1>FitLife</h1>
+      <p>Your Personal Fitness Companion</p>
+    </div>
+
+    <form [formGroup]="loginForm" class="auth-form">
+      <ion-item class="custom-input">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+
+      <ion-item class="custom-input">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input [type]="showPassword() ? 'text' : 'password'" formControlName="password"></ion-input>
+        <ion-button slot="end" fill="clear" (click)="showPassword.set(!showPassword())">
+          <ion-icon [name]="showPassword() ? 'eye-off' : 'eye'"></ion-icon>
+        </ion-button>
+      </ion-item>
+
+      <ion-button expand="block" class="btn-primary" (click)="loginWithEmail()" [disabled]="!loginForm.valid || isLoading()">
+        <span *ngIf="!isLoading()">Sign In</span>
+        <ion-spinner *ngIf="isLoading()" name="crescent"></ion-spinner>
+      </ion-button>
+    </form>
+
+    <div class="divider">
+      <span>Or continue with</span>
+    </div>
+
+    <div class="social-buttons">
+      <ion-button expand="block" class="btn-social" (click)="loginWithGoogle()">
+        <ion-icon name="logo-google"></ion-icon>
+      </ion-button>
+      <ion-button expand="block" class="btn-social" (click)="loginWithApple()">
+        <ion-icon name="logo-apple"></ion-icon>
+      </ion-button>
+    </div>
+
+    <div class="auth-footer">
+      <p>Don't have an account? <a (click)="navigateToRegister()">Sign Up</a></p>
+    </div>
+  </div>
+</ion-content>

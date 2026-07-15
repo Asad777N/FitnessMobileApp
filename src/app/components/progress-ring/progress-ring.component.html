@@ -1,0 +1,25 @@
+<div class="progress-ring-container">
+  <svg [attr.width]="radius * 2 + strokeWidth * 2" [attr.height]="radius * 2 + strokeWidth * 2">
+    <circle
+      [attr.cx]="radius + strokeWidth"
+      [attr.cy]="radius + strokeWidth"
+      [attr.r]="radius"
+      [attr.stroke-width]="strokeWidth"
+      class="progress-ring-bg"
+    />
+    <circle
+      [attr.cx]="radius + strokeWidth"
+      [attr.cy]="radius + strokeWidth"
+      [attr.r]="radius"
+      [attr.stroke-width]="strokeWidth"
+      [attr.stroke]="color"
+      [style.stroke-dasharray]="circumference"
+      [style.stroke-dashoffset]="strokeDashoffset"
+      class="progress-ring"
+    />
+  </svg>
+  <div class="progress-ring-text">
+    <p class="value">{{ value }}</p>
+    <p class="label">{{ label }}</p>
+  </div>
+</div>

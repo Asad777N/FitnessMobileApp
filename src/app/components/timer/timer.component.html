@@ -1,0 +1,19 @@
+<div class="timer-container">
+  <div class="timer-display">
+    <p class="time">{{ displayTime }}</p>
+  </div>
+  <div class="timer-controls">
+    <button (click)="start()" *ngIf="!isRunning && !isPaused" class="btn-start">
+      <ion-icon name="play"></ion-icon>
+    </button>
+    <button (click)="pause()" *ngIf="isRunning" class="btn-pause">
+      <ion-icon name="pause"></ion-icon>
+    </button>
+    <button (click)="resume()" *ngIf="isPaused" class="btn-resume">
+      <ion-icon name="play"></ion-icon>
+    </button>
+    <button (click)="reset()" class="btn-reset">
+      <ion-icon name="refresh"></ion-icon>
+    </button>
+  </div>
+</div>

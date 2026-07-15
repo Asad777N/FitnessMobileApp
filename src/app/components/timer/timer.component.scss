@@ -1,0 +1,73 @@
+.timer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 20px;
+}
+
+.timer-display {
+  background: linear-gradient(135deg, rgba(0, 255, 136, 0.1) 0%, rgba(255, 150, 0, 0.1) 100%);
+  border: 2px solid rgba(0, 255, 136, 0.3);
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 255, 136, 0.1);
+
+  .time {
+    font-size: 56px;
+    font-weight: 700;
+    color: #00ff88;
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 4px;
+  }
+}
+
+.timer-controls {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+
+  button {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 24px;
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  .btn-start,
+  .btn-resume {
+    background: linear-gradient(135deg, #00ff88 0%, #00cc6f 100%);
+    color: #000;
+    font-weight: 600;
+    border: none;
+
+    &:active {
+      box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+    }
+  }
+
+  .btn-pause {
+    background: linear-gradient(135deg, #ff9600 0%, #ff7700 100%);
+    color: #fff;
+    border: none;
+  }
+
+  .btn-reset {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+  }
+}
